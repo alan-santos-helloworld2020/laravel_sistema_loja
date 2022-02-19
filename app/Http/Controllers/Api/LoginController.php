@@ -12,10 +12,6 @@ class LoginController extends Controller
 {
  
 
-    public function index()
-    {
-        //
-    }
 
     public function store(Request $request)
     {
@@ -37,15 +33,7 @@ class LoginController extends Controller
         return response()->json(["name"=>$request->name,"token"=>$token]);
     }
 
-    public function show($id)
-    {
-        //
-    }
 
-    public function update(Request $request, $id)
-    {
-        //
-    }
 
     public function destroy($id)
     {
