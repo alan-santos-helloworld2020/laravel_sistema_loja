@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -30,7 +31,7 @@ class UserController extends Controller
         $user = new User();
         $user->name = $request->input("name");
         $user->email = $request->input("email");
-        $user->password = $request->input("password");
+        $user->password = Hash::make($request->input("password"));
         if($user->save())
         {
             return $user;
